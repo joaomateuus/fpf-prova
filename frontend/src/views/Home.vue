@@ -4,7 +4,7 @@
       <img class="h-16 w-42" src="../assets/img/logo.png" alt="">
       <div>
         <nav>
-          <button class="text-green-800 font-bold border-2 border-white h-12 w-44 mt-4 rounded-md bg-white">
+          <button class="text-black font-bold h-12 w-44 mt-8 rounded-md bg-blue-300">
             <router-link to="/cadastro">Cadastrar Projeto</router-link> 
           </button>
         </nav>
@@ -12,8 +12,8 @@
     </div>
     <div class="md:flex flex-col justify-start items-center pt-8 w-screen "> 
       <div class="md:flex flex-col pt-12 w-9/12 min-h-full bg-white pl-40 w-11/12 rounded-md">
-        <h1 class="ml-36 text-2xl font-bold">Projetos em Andamento</h1>
-        <TableComponent class="mt-4 h-fit w-fit" />
+        <h1 class="ml-44 text-2xl font-bold">Projetos em Andamento</h1>
+        <TableComponent class="pr-48 mt-8" />
       </div>
     </div>
   </div>

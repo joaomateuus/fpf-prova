@@ -1,20 +1,72 @@
 <template>
-    <div>
-        <div>
-            <h1>Hello World</h1>
+    <div class="wrapper bg-gradient-to-b from-green-300 to-green-800">
+        <div class="login-wrap">
+            <div class="login-html">
+                <input @click="handlingtab1" id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Cadastro de Projetos</label>
+                <input @click="handlingtab2" id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Simulação de Retorno</label>
+                <div class="login-form">
+                    <Simulacao @salvar-retorno="pegandoRetorno" v-show="simu"/>
+                    <Projetos @to-api="toApi" :retorno="retorno" v-show="projetos" />
+                </div>
+            </div>     
         </div>
     </div>
 </template>
 
 <script>
+import Projetos from '../components/Form/Projetos.vue'
+import Simulacao from '../components/Form/Simulacao.vue'
+
 export default {
     name:'Cadastro',
-    data:() => ({
+    components: {
+        Projetos, Simulacao
+    },
+    computed: {
 
+    },
+    data:() => ({
+        projetos:true,
+        simu:false,
+        retorno: '',
+        projetos:[],
     }),
+    methods:{
+        //função para lidar com estado de componentes
+        handlingtab1(){
+            this.projetos=true;
+            this.simu=false;
+        },
+        handlingtab2(){
+            this.projetos=false
+            this.simu=true;
+        },
+        //função para pegar retorno de investimento no componente filho
+        pegandoRetorno(r) {
+            this.retorno = r;
+        },
+        //salvando os dados do form no componente pai 
+        toApi(obj){
+            this.projetos = obj;
+            console.log(this.projetos);
+        }
+        
+    }
 }
 </script>
 
-<style>
+<style scoped>
+.wrapper{
+	margin:0;
+	color:#6a6f8c;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
 
 </style>
+
+<style src="../components/Form/style.css" />
