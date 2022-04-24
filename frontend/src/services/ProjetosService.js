@@ -2,41 +2,41 @@
 import Api from './Api';
 
 export default{
-      //método responsável pelo cadastro
-      async createNewProjeto(){
+      //método responsável pelo cadastro http://localhost:8000/api/v1/projetos
+      async createNewProjeto(projetos){
         try {
-            const response = await Api().post('/projetos', projetos);
+            const response = await Api().post('/projetos/', projetos);
             return response.data; 
         } catch (error) {
-            console.log(error);
+            return console.log(error);
         }
     },
-    //método responsável pela listagem
+    //método responsável pela listagem http://localhost:8000/api/v1/projetos
     async getProjetos(){ 
         try {
-            const response = await Api().get('/projetos');
+            const response = await Api().get('/projetos/');
             return response.data;
         } catch (error) {
-            console.log(error)
+            return console.log(error)
         }
     },
   
-    //método que atualiza projeto pelo id
+    //método que atualiza projeto pelo id http://localhost:8000/api/v1/projetos/:id
     async updateProjetos(id) {
         try {
-            const response = await Api().put(`/projetos/${id}`);
+            const response = await Api().put(`/projetos/${id}/`);
             return response.data;
         } catch (error) {
-            console.log(error);
+            return console.log(error);
         }
     },
-    //método responsável por excluir
+    //método responsável por excluir http://localhost:8000/api/v1/projetos/:id
     async deleteProjeto(id){
         try {
-            const response = await Api().delete(`/projetos/${id}`);
+            const response = await Api().delete(`/projetos/${id}/`);
             return response.data;
         } catch (error) {
-            console.log(error);
+            return console.log(error);
         }
     },
 }

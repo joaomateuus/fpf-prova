@@ -3,13 +3,13 @@
         <form action="#" @submit.prevent="submit" class="md:flex flex-col mt-4 h-1/2 w-3/4 p-8 bg-white rounded-md">
             <div class="md:flex flex-row justify-evenly pt-2">
                 <label for="" class="mt-4 text-black">Inicio</label>
-                <input class="text-black rounded-md h-8 mt-2 ml-4 w-fit pl-2 border border-black" type="date" v-model="iniProj">
+                <input class="text-black rounded-md h-8 mt-2 ml-4 w-fit pl-2 border border-black" type="date" v-model="dataInicio">
                 <label for="" class="mt-4 text-black ml-4">Termino</label>
-                <input class="text-black rounded-md h-8 mt-2 ml-4 w-fit pl-2 border border-black" type="date" v-model="termiProj">
+                <input class="text-black rounded-md h-8 mt-2 ml-4 w-fit pl-2 border border-black" type="date" v-model="dataTermino">
             </div>
             <div class="md:flex flex-col justify-around pt-4">
                 <label class="text-black mt-6" for="">Qual o risco do projeto?</label>
-                <select class="border border-black rounded-md h-8 pl-2" name="risco" v-model="riscoProj">
+                <select class="border border-black rounded-md h-8 pl-2" name="risco" v-model="risco">
                     <option class="text-black" value="0">0-Baixo</option>
                     <option class="text-black" value="1">1-Médio</option>
                     <option class="text-black" value="2">2-Alto</option>
@@ -42,12 +42,12 @@ export default {
     components:{Simulacao},
     props: ["retorno"],
     data:() => ({
-        iniProj:'',
-        termiProj:'',
-        riscoProj:'',
-        nome:'',
-        valor:'',
-        participantes:'',
+        dataInicio:null,
+        dataTermino:null,
+        risco:null,
+        nome:null,
+        valor:null,
+        participantes:null,
     }),
     methods: {
         //mandando os dados ao componenente pai

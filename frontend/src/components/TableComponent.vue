@@ -10,14 +10,14 @@
                     <th>Risco</th>
                     <th>Participantes</th>
                     <th>#</th>
-                </tr>
-                <tr>
-                    <td>UPS5005</td>
-                    <td data-th="Supplier Name">UPS</td>
-                    <td data-th="Invoice Number">ASDF19218</td>
-                    <td data-th="Invoice Date">06/25/2016</td>
-                    <td data-th="Due Date">12/25/2016</td>
-                    <td data-th="Net Amount">$8,322.12</td>
+                  </tr>
+                  <tr v-for="projeto in projetos" :key="projeto.id">
+                    <td>{{ projeto.nome }}</td>
+                    <td>{{ projeto.dataInicio }}</td>
+                    <td>{{ projeto.dataTermino }}</td>
+                    <td>{{ projeto.valor }}</td>
+                    <td>{{ projeto.risco }}</td>
+                    <td>{{ projeto.participantes }}</td>
                     <td>
                         <button class="h-8 w-16 bg-blue-300 rounded-md">Editar</button>
                         <button class="h-8 w-16 bg-red-500 rounded-md mt-2">Excluir</button>
@@ -30,11 +30,29 @@
 </template>
 
 <script>
+import ProjetosService from '../services/ProjetosService';
+
 export default {
     name: 'TableComponent',
     data:() => ({
+      projetos: [],
 
     }),
+    methods: {
+      async gettingProjetos(){
+        try {
+          const response = await ProjetosService.getProjetos();
+          console.log(response);
+          this.projetos = response;
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+    },
+    mounted(){
+      this.gettingProjetos();
+    }
 }
 </script>
 <style scoped>

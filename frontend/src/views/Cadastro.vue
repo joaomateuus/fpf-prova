@@ -17,6 +17,8 @@
 import Projetos from '../components/Form/Projetos.vue'
 import Simulacao from '../components/Form/Simulacao.vue'
 
+import ProjetosService from '../services/ProjetosService';
+
 export default {
     name:'Cadastro',
     components: {
@@ -46,10 +48,18 @@ export default {
             this.retorno = r;
         },
         //salvando os dados do form no componente pai 
-        toApi(obj){
+        async toApi(obj){
             this.projetos = obj;
             console.log(this.projetos);
-        }
+            try {
+                await ProjetosService.createNewProjeto(this.projetos);
+                this.$router.push({
+                    name: 'Home',
+                })
+            } catch (error) {
+                console.log(error);
+            }
+        },
         
     },
 }
