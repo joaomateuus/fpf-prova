@@ -6,7 +6,7 @@
                 <input @click="handlingtab2" id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Simulação de Retorno</label>
                 <div class="login-form">
                     <Simulacao @salvar-retorno="pegandoRetorno" v-show="simu"/>
-                    <Projetos @to-api="toApi" :retorno="retorno" v-show="projetos" />
+                    <Projetos @to-api="toApi" :retorno="retorno" v-show="projetosTab" />
                 </div>
             </div>     
         </div>
@@ -26,20 +26,20 @@ export default {
 
     },
     data:() => ({
-        projetos:true,
+        projetosTab:true,
         simu:false,
         retorno: '',
-        projetos:[],
+        projetos:{},
     }),
     methods:{
         //função para lidar com estado de componentes
         handlingtab1(){
-            this.projetos=true;
-            this.simu=false;
+            this.projetosTab = true;
+            this.simu = false;
         },
         handlingtab2(){
-            this.projetos=false
-            this.simu=true;
+            this.simu = true;
+            this.projetosTab = false
         },
         //função para pegar retorno de investimento no componente filho
         pegandoRetorno(r) {
@@ -51,7 +51,7 @@ export default {
             console.log(this.projetos);
         }
         
-    }
+    },
 }
 </script>
 

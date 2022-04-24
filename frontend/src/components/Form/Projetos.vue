@@ -50,7 +50,7 @@ export default {
         participantes:'',
     }),
     methods: {
-        //mandando os dados ao componente pai
+        //mandando os dados ao componenente pai
         submit(){
             parseFloat(this.valor);
             parseInt(this.riscoProj);

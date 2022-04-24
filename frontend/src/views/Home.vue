@@ -12,7 +12,7 @@
     </div>
     <div class="md:flex flex-col justify-start items-center pt-8 w-screen "> 
       <div class="md:flex flex-col pt-12 w-9/12 min-h-full bg-white pl-40 w-11/12 rounded-md">
-        <h1 class="ml-44 text-2xl font-bold">Projetos em Andamento</h1>
+        <h1 class="ml-44 text-2xl font-sans">Projetos em Andamento</h1>
         <TableComponent class="pr-48 mt-8" />
       </div>
     </div>

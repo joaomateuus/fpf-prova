@@ -63,7 +63,7 @@ export default {
             this.valor = this.valor;
             this.retorno = this.retorno;
         },
-        //enviando os dados ao componente pai para ser exibido no form.
+        //enviando os dados ao componente pai para ser exibido no form
         salvando(){
             this.$emit('salvar-retorno', this.retorno);
         }
