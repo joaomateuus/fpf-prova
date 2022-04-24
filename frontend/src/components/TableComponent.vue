@@ -3,15 +3,17 @@
         <table class="rwd-table">
             <tbody>     
                 <tr>
+                    <th>#</th>
                     <th>Nome</th>
                     <th>Inicio</th>
                     <th>Termino</th>
                     <th>Valor</th>
                     <th>Risco</th>
                     <th>Participantes</th>
-                    <th>#</th>
+                    <th>Ações</th>
                   </tr>
                   <tr v-for="projeto in projetos" :key="projeto.id">
+                    <td>{{ projeto.id }}</td>
                     <td>{{ projeto.nome }}</td>
                     <td>{{ projeto.dataInicio }}</td>
                     <td>{{ projeto.dataTermino }}</td>
@@ -19,8 +21,8 @@
                     <td>{{ projeto.risco }}</td>
                     <td>{{ projeto.participantes }}</td>
                     <td>
-                        <button class="h-8 w-16 bg-blue-300 rounded-md">Editar</button>
-                        <button class="h-8 w-16 bg-red-500 rounded-md mt-2">Excluir</button>
+                      <button class="h-8 w-16 bg-blue-300 rounded-md">Editar</button>
+                      <button class="h-8 w-16 bg-red-500 rounded-md mt-2" @click="deletingProjeto()">Excluir</button>
                     </td>
                 </tr>
       
@@ -33,26 +35,26 @@
 import ProjetosService from '../services/ProjetosService';
 
 export default {
-    name: 'TableComponent',
-    data:() => ({
-      projetos: [],
+  name: 'TableComponent',
+  data:() => ({
+    projetos: [],
 
-    }),
-    methods: {
-      async gettingProjetos(){
-        try {
-          const response = await ProjetosService.getProjetos();
-          console.log(response);
-          this.projetos = response;
-        } catch (error) {
-          console.log(error);
-        }
-      }
-
+  }),
+  methods: {
+    async gettingProjetos(){
+      const response = await ProjetosService.getProjetos();
+      this.projetos = response;
     },
-    mounted(){
+
+    async deletingProjeto(){
+      await ProjetosService.deleteProjeto();
       this.gettingProjetos();
-    }
+    },
+    
+  },
+  mounted(){
+    this.gettingProjetos();
+  }
 }
 </script>
 <style scoped>

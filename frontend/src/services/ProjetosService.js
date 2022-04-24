@@ -1,4 +1,4 @@
-//Arquivo responsável pelos métodos de requisão via htttp
+//ProjetosService.js: Arquivo responsável pelos métodos de requisão via htttp
 import Api from './Api';
 
 export default{
@@ -32,6 +32,7 @@ export default{
     },
     //método responsável por excluir http://localhost:8000/api/v1/projetos/:id
     async deleteProjeto(id){
+        id = prompt('Qual indice (# na tabela) do projeto que deseja DELETAR?')
         try {
             const response = await Api().delete(`/projetos/${id}/`);
             return response.data;

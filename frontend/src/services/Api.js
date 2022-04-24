@@ -1,4 +1,4 @@
-//Arquivo responsável por inciar o axios e suas requisições a baseURL
+//Api.js: Arquivo responsável por inciar o axios e suas requisições a baseURL
 import axios from "axios";
 
 export default() => axios.create({
