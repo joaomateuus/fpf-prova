@@ -44,16 +44,19 @@ export default {
 
   }),
   methods: {
+    //Pega a resposta transforma em um novc array
     async gettingProjetos(){
       const response = await ProjetosService.getProjetos();
-      this.projetos = response;
+      this.projetos = { ...response}
     },
+    //espera a resposta da requisição e atualiza a lista
     async deletingProjeto(){
       await ProjetosService.deleteProjeto();
       this.gettingProjetos();
     },
     
   },
+  //usando o hooks do ciclo de vida do vue para atualizar a lista; 
   mounted(){
     this.gettingProjetos();
   }
