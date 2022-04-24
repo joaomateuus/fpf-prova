@@ -4,4 +4,4 @@ from .models import Projeto
 class ProjetoSerializers(ModelSerializer):
     class Meta:
         model = Projeto
-        fields = ['nome', 'data_inicio', 'data_final', 'valor', 'risco', 'participantes']
+        fields = ['id', 'nome', 'dataInicio', 'dataTermino', 'valor', 'risco', 'participantes']
