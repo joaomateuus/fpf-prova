@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper bg-gradient-to-b from-green-300 to-green-800">
+    <div class=" bg-gradient-to-b from-green-300 to-green-800">
         <div class="login-wrap">
             <div class="login-html">
                 <input @click="handlingtab1" id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Cadastro de Projetos</label>
@@ -30,6 +30,7 @@ export default {
     data:() => ({
         projetosTab:true,
         simu:false,
+        valor:'',
         retorno: '',
         projetos:{},
     }),

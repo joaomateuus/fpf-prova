@@ -36,17 +36,18 @@ export default {
     methods: {
         //calculando o retorno de acordo com o input e suas respectivas regras de négocio
         calculando(){
+            parseFloat(this.valor)
             parseInt(this.risco);
             if(this.risco == 0){
-                this.retorno = (parseFloat(this.valor)*5)/100;
+                this.retorno = (this.valor*5)/100;
                 return this.retorno
             }
             if(this.risco == 1){
-                this.retorno = (parseFloat(this.valor)*10)/100;
+                this.retorno = (this.valor*10)/100;
                 return this.retorno
             }
             else if(this.risco == 2){
-                this.retorno = (parseFloat(this.valor)*20)/100;
+                this.retorno = (this.valor*20)/100;
                 return this.retorno
             }
             return this.retorno
@@ -63,13 +64,12 @@ export default {
             this.valor = this.valor;
             this.retorno = this.retorno;
         },
-        //enviando os dados ao componente pai para ser exibido no form
-        salvando(){
-            this.$emit('salvar-retorno', this.retorno);
-        }
-
+        //enviando os dados ao componente pai para ser exibido no form se o retorno for maior que o investimento
+         
     }
+
 }
+
 </script>
 
 <style scoped />

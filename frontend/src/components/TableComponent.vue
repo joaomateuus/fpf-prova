@@ -21,8 +21,10 @@
                     <td>{{ projeto.risco }}</td>
                     <td>{{ projeto.participantes }}</td>
                     <td>
-                      <button class="h-8 w-16 bg-blue-300 rounded-md">Editar</button>
-                      <button class="h-8 w-16 bg-red-500 rounded-md mt-2" @click="deletingProjeto()">Excluir</button>
+                      <router-link to="Editar">
+                        <button class="h-8 w-16 bg-blue-300 rounded-md">Editar</button>
+                      </router-link>
+                      <button class="h-8 w-16 bg-red-500 rounded-md mt-2" @click="deletingProjeto">Excluir</button>
                     </td>
                 </tr>
       
@@ -36,6 +38,7 @@ import ProjetosService from '../services/ProjetosService';
 
 export default {
   name: 'TableComponent',
+  emits:["emit-update"],
   data:() => ({
     projetos: [],
 
@@ -45,7 +48,6 @@ export default {
       const response = await ProjetosService.getProjetos();
       this.projetos = response;
     },
-
     async deletingProjeto(){
       await ProjetosService.deleteProjeto();
       this.gettingProjetos();

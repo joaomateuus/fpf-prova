@@ -56,6 +56,7 @@ export default {
             parseInt(this.riscoProj);
             this.$emit('to-api', this.$data);
         },
+       
     }
 }
 </script>
