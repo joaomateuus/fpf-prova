@@ -15,7 +15,6 @@
 
 # Aplicação :
 <br>
-
 # Home
 ### Aqui temos a lista de projetos sendo exibida com as funcionalidades de editar e excluir e uma sidebar com um botão para cadastrar nossos projetos.
 <br>
@@ -25,7 +24,6 @@
 - Excluir: Informando o id desejado o projeto sera excluido.
 
 <br>
-
 # Cadastrar projetos
 ### Aqui podemos alternar entre tabs, a do formulário e a de simular o calculo.
 <br>
