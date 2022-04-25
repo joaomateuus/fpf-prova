@@ -12,7 +12,7 @@
 - ### [Axios](https://axios-http.com/ptbr/docs/intro)
 <br>
 
-# Aplicação :
+# Layout e Funcionalidades :
 
 <br>
 <div align="center">
@@ -51,6 +51,46 @@
 
 </div>
 
-## Na pasta das aplicações tem um README explicando como executa-las :)
+# Como executar o backend
 
+````
+# Clone este repositório
+$ git clone <https://github.com/joaomateuus/fpf-prova/tree/main/backend>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd Projeto
+
+# Instale o virtualenv
+$ pip install virtualenv 
+
+# Crie um ambiente virtual
+$ virtualenv venv (windows)
+
+# Acesse o ambiente virtual
+$ venv/Scripts/activate (windows)
+
+#  Instale as bibliotecas necessarias 
+$ pip install -r requirements.txt
+
+# Execute a aplicação no terminal
+$ python manage.py runserver
+
+# O servidor inciará na porta:8000 - acesse <http://localhost:8000/api/v1/>
+````
 <br>
+
+# Como executar o Frontend
+
+## Instalando dependências
+```
+yarn install
+```
+
+### Subindo LocalHost
+```
+yarn serve
+```
+
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
