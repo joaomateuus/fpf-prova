@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Cadastro from '../views/Cadastro.vue'
-import EditarProjeto from '../components/Form/EditarProjeto.vue';
+import EditarProjeto from '../components/Form/EditarComponent.vue';
 
 
 Vue.use(VueRouter)

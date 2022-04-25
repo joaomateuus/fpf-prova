@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Simulacao from './Simulacao.vue'
+import Simulacao from './SimulacaoComponent.vue'
 export default {
     name:'Projetos',
     components:{Simulacao},

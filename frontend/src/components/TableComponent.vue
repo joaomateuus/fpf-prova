@@ -1,36 +1,36 @@
 <template>
-    <div class="container">
-        <table class="rwd-table">
-            <tbody>     
-                <tr>
-                    <th>#</th>
-                    <th>Nome</th>
-                    <th>Inicio</th>
-                    <th>Termino</th>
-                    <th>Valor</th>
-                    <th>Risco</th>
-                    <th>Participantes</th>
-                    <th>Ações</th>
-                  </tr>
-                  <tr v-for="projeto in projetos" :key="projeto.id">
-                    <td>{{ projeto.id }}</td>
-                    <td>{{ projeto.nome }}</td>
-                    <td>{{ projeto.dataInicio }}</td>
-                    <td>{{ projeto.dataTermino }}</td>
-                    <td>{{ projeto.valor }}</td>
-                    <td>{{ projeto.risco }}</td>
-                    <td>{{ projeto.participantes }}</td>
-                    <td>
-                      <router-link to="Editar">
-                        <button class="h-8 w-16 bg-blue-300 rounded-md">Editar</button>
-                      </router-link>
-                      <button class="h-8 w-16 bg-red-500 rounded-md mt-2" @click="deletingProjeto">Excluir</button>
-                    </td>
-                </tr>
+  <div class="container">
+    <table class="rwd-table">
+      <tbody>     
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Inicio</th>
+          <th>Termino</th>
+          <th>Valor</th>
+          <th>Risco</th>
+          <th>Participantes</th>
+          <th>Ações</th>
+        </tr>
+        <tr v-for="projeto in projetos" :key="projeto.id">
+          <td>{{ projeto.id }}</td>
+          <td>{{ projeto.nome }}</td>
+          <td>{{ projeto.dataInicio }}</td>
+          <td>{{ projeto.dataTermino }}</td>
+          <td>{{ projeto.valor }}</td>
+          <td>{{ projeto.risco }}</td>
+          <td>{{ projeto.participantes }}</td>
+          <td>
+            <router-link to="Editar">
+              <button class="h-8 w-16 bg-blue-300 rounded-md">Editar</button>
+            </router-link>
+            <button class="h-8 w-16 bg-red-500 rounded-md mt-2" @click="deletingProjeto">Excluir</button>
+          </td>
+          </tr>
       
-            </tbody>
-        </table>
-    </div>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>

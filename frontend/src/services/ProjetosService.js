@@ -21,7 +21,7 @@ export default{
         }
     },
   
-    //método que atualiza projeto pelo id http://localhost:8000/api/v1/projetos/:id
+    //método que atualiza o projeto editado pelo id http://localhost:8000/api/v1/projetos/:id
     async updateProjetos(projetos) {
         try {
             const id = projetos.id;
@@ -41,8 +41,9 @@ export default{
             return console.log(error);
         }
     },
+    //Método que retorna os dados de um projeto no componente editar
     async getProjetoById(id){
-        id = prompt('Qual o indice (# na tabela) do projeto que deseja editar');
+        id = prompt('Qual o indice (# na tabela) do projeto que deseja EDITAR?');
         try {
             const response = await Api().get(`/projetos/${id}/`);
             return response.data;

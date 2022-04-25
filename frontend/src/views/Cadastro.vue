@@ -14,9 +14,8 @@
 </template>
 
 <script>
-import Projetos from '../components/Form/Projetos.vue'
-import Simulacao from '../components/Form/Simulacao.vue'
-
+import Projetos from '../components/Form/ProjetosComponent.vue'
+import Simulacao from '../components/Form/SimulacaoComponent.vue'
 import ProjetosService from '../services/ProjetosService';
 
 export default {

@@ -44,7 +44,7 @@ export default {
             const response = await ProjetosService.getProjetoById();
             this.projetos = { ...response}
         },
-       
+       //Função que passa os dados editados
         async updatingProjetos() {
             await ProjetosService.updateProjetos(this.projetos)({
                 id: this.projetos.id,
