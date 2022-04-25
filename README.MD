@@ -1,7 +1,7 @@
-# Exercicio para FPF Tech
+# Visão Geral
 
-## Visão Geral
-### Desenvolva um sistema para o grupo Jedi Inc. gerenciar o cadastros de projetos, seu tempo de duração e realiza uma simulação do cálculo de retorno de investimento. Desenvolva a camada de visão (front-end) e um serviço (back-end) para salvar os dados do projeto, sinta-se livre para definir a arquitetura da aplicação.
+## Desenvolva um sistema para o grupo Jedi Inc. gerenciar o cadastros de projetos, seu tempo de duração e realiza uma simulação do cálculo de retorno de investimento. Desenvolva a camada de visão (front-end) e um serviço (back-end) para salvar os dados do projeto, sinta-se livre para definir a arquitetura da aplicação.
+
 
 <br>
 
