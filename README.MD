@@ -12,9 +12,10 @@
 - ### [Axios](https://axios-http.com/ptbr/docs/intro)
 <br>
 
-
 # Aplicação :
+
 <br>
+
 # Home
 ### Aqui temos a lista de projetos sendo exibida com as funcionalidades de editar e excluir e uma sidebar com um botão para cadastrar nossos projetos.
 <br>
