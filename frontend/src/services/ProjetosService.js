@@ -22,10 +22,10 @@ export default{
     },
   
     //método que atualiza projeto pelo id http://localhost:8000/api/v1/projetos/:id
-    async updateProjetos(id) {
-        id = prompt('Qual o id ?')
+    async updateProjetos(projetos) {
         try {
-            const response = await Api().put(`/projetos/${id}/`);
+            const id = projetos.id;
+            const response = await Api().put(`/projetos/${id}/`, projetos);
             return response.data;
         } catch (error) {
             return console.log(error);

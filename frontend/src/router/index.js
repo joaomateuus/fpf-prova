@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Cadastro from '../views/Cadastro.vue'
-import Editar from '../components/Form/EditarProjeto.vue'
+import EditarProjeto from '../components/Form/EditarProjeto.vue';
+
 
 Vue.use(VueRouter)
 
@@ -19,8 +20,8 @@ const routes = [
   },
   {
     path: '/editar',
-    name: 'Editar',
-    component: Editar
+    name: 'EditarProjeto',
+    component: EditarProjeto
   },
  
 ]

@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gradient-to-b from-green-300 to-green-800 h-full">
         <div class="md:flex flex-col justify-start items-center pt-8 ">
-            <form action="#" @submit.prevent="submit" class="md:flex flex-col mt-4 h-1/2 w-3/4 p-8 bg-white rounded-md" >
+            <form action="#" @submit.prevent="updatingProjetos" class="md:flex flex-col mt-4 h-1/2 w-3/4 p-8 bg-white rounded-md" >
                 <div class="md:flex flex-row pt-2">
                     <label for="" class="mt-4 text-black">Inicio</label>
                     <input class="text-black rounded-md h-8 mt-2 ml-4 w-fit pl-2 border border-black" type="date" v-model="projetos.dataInicio">
@@ -23,7 +23,7 @@
                 <label  class="text-black mt-6" for="">Participantes</label>
                 <input class="text-black rounded-md h-8 mt-2 border border-black pl-2" type="text" v-model="projetos.participantes">
                 
-                <button class="mt-8 h-12 w-42 bg-blue-700 text-white text-xl rounded-md hover:bg-green-300" @click="updatingProjetos">Salvar</button>
+                <button class="mt-8 h-12 w-42 bg-blue-700 text-white text-xl rounded-md hover:bg-green-300" type="submit">Salvar</button>
             </form>
         </div>
     </div>
@@ -31,7 +31,6 @@
 
 <script>
 import ProjetosService from '../../services/ProjetosService'
-
 
 export default {
     name:'EditarProjeto',
@@ -45,9 +44,9 @@ export default {
             const response = await ProjetosService.getProjetoById();
             this.projetos = { ...response}
         },
-        /*
+       
         async updatingProjetos() {
-            await ProjetosService.updateProjetos({
+            await ProjetosService.updateProjetos(this.projetos)({
                 id: this.projetos.id,
                 nome: this.projetos.nome,
                 dataInicio: this.projetos.dataInicio,
@@ -56,9 +55,9 @@ export default {
                 risco: this.projetos.risco,
                 participantes: this.projetos.participantes
             })
-            this.$router.push({name:'Home'});
+            this.$router.push({ name:'Home' });
         }
-        */
+        
     
     },
     //usando o hooks do ciclo de vida do vue para chamar a função de pegar id 
