@@ -43,7 +43,7 @@
  
  <img src="https://user-images.githubusercontent.com/80249973/165019472-08ffd3da-1ae4-4c71-bb99-051c74f1f170.png">
  
- - Simular calculo: Componente onde informamos os campos para que seja realizado o calculo de retorno da forma correta, exibindo as informações na tela, excluir e     salvar, ao salvar nosso retorno fica sendo exibido na aba de formulário para lembrarmos desse valor ao preencher.
+ - Simular calculo: Componente onde informamos os campos para que seja realizado o calculo de retorno da forma correta, exibindo as informações na tela, e os botões de excluir e salvar, ao salvar nosso retorno fica sendo exibido na aba de formulário para lembrarmos desse valor ao preencher.
   
  <img src="https://user-images.githubusercontent.com/80249973/165019473-e0d33f0b-7b63-4ba7-a795-0655b97200f1.png">
  
